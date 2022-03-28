@@ -1,0 +1,5 @@
+@layer components {
+  .btn-blue {
+    @apply text-white bg-blue-500 rounded-lg hover:bg-blue-700;
+  }
+}
