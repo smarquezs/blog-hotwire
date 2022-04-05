@@ -2,7 +2,3 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "./buttons.css";
-
-body {
-  background-color: blue;
-}
