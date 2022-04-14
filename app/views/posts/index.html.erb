@@ -1,8 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
- <button type="button" class="btn-blue">Save</button>
-
 <h1>Posts</h1>
+
+<form class="w-full max-w-sm" action="/posts" >
+  <div class="flex items-center border-b border-teal-500 py-2">
+    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="text to search" name="q" value="<%= params[:q] %>">
+    <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">
+      Search
+    </button>
+  </div>
+</form>
 
 <div class="table border-collapse table-auto w-full text-sm" data-controller="posts">
   <div class="table-row">
@@ -16,3 +23,5 @@
     <%= render @posts %>
   </div>
 </div>
+
+<%== pagy_nav(@pagy) %>

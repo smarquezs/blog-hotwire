@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+1000.times do
+  author = Author.create(name: FFaker::Book.author, city: FFaker::Address.city)
+  10.times do
+    Post.create(title: FFaker::Education.major, body: FFaker::Education.degree, associated_author: author)
+  end
+end
+
+puts '.'

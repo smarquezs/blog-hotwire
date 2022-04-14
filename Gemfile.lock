@@ -91,6 +91,7 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
+    ffaker (2.21.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -135,7 +136,12 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
+    pagy (5.10.1)
+      activesupport
     pg (1.3.3)
+    pg_search (2.3.6)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     public_suffix (4.0.6)
     puma (5.6.2)
       nio4r (~> 2.0)
@@ -222,9 +228,12 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  ffaker
   jbuilder
   jsbundling-rails
+  pagy
   pg (~> 1.1)
+  pg_search
   puma (~> 5.0)
   rails (~> 7.0.2)
   redis (~> 4.0)
