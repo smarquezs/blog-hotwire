@@ -1,13 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
+
+# results         = Article.pagy_search(params[:q])
+# @pagy, @results =
+
   # GET /posts or /posts.json
   def index
-    @pagy, @posts = if params[:q].present?
-                      pagy(Post.search(params[:q]))
-                    else
-                      pagy(Post.all)
-                    end
+    results = Post.includes(:author).pagy_search(params[:q])
+    @pagy, @posts = pagy_meilisearch(results, items: 20)
   end
 
   # GET /posts/1 or /posts/1.json
