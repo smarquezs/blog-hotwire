@@ -1,3 +1,4 @@
 MeiliSearch::Rails.configuration = {
-  meilisearch_host: 'http://127.0.0.1:7700'
-}
+  meilisearch_host: ENV['MEILISEARCH_HOST'],
+  meilisearch_api_key: ENV['MEILISEARCH_API_KEY']
+}.select { |_, v| v.present? }
