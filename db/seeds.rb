@@ -9,7 +9,7 @@
 1000.times do
   author = Author.create(name: FFaker::Book.author, city: FFaker::Address.city)
   10.times do
-    Post.create(title: FFaker::Education.major, body: FFaker::Education.degree, associated_author: author)
+    Post.create(title: FFaker::Education.major, body: FFaker::Education.degree, author: author)
   end
 end
 
