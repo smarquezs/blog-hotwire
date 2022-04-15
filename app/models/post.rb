@@ -16,7 +16,7 @@ class Post < ApplicationRecord
                   associated_against: { author: { name: 'A', city: 'B' } },
                   using: { tsearch: { prefix: true } }
 
-  meilisearch do
+  meilisearch index_uid: "post-#{Rails.env}" do
     attribute :title, :body
     attribute :created_at do
       created_at.to_i
