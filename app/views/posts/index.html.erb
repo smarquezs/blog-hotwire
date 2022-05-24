@@ -2,6 +2,12 @@
 
 <h1>Posts</h1>
 
+<% if lookup_context.exists?('missing', ['posts'], true) %>
+  <h2>The partial post exists inside the posts folder</h2>
+<% else %>
+  <h2>Rendereing the default partial</h2>
+<% end %>
+
 <form class="w-full max-w-sm" action="/posts" >
   <div class="flex items-center border-b border-teal-500 py-2">
     <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="text to search" name="q" value="<%= params[:q] %>">
