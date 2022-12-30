@@ -15,4 +15,4 @@ services:
           name: blog
           property: connectionString
       - key: RAILS_MASTER_KEY
-        sync: falsb
+        sync: false
